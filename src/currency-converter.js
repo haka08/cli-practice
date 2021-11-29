@@ -72,7 +72,21 @@ let usdToGbp=0.7
 // If the user supplies an invalid initial or target currency, display a meaningful
 // warning message and exit the program.
 
+const supportedCurrency=['USD','CAD','GBP'];
+const upperInitialCurrency=initialCurrency.toUpperCase();
+const upperTargetCurrency=targetCurrency.toUpperCase();
 
+if (supportedCurrency.includes(upperInitialCurrency) === false )
+{
+    console.log("Oh no! Looks like your initial currency is not supported!",initialCurrency)
+    process.exit();
+}
+
+if (supportedCurrency.includes(upperTargetCurrency) === false )
+{
+    console.log("Oh no! Looks like your target currency is not supported!",targetCurrency)
+    process.exit();
+}
 
 // --------------------------------------------------
 // Step 5: Perform conversion
