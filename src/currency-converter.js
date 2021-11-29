@@ -96,6 +96,27 @@ if (supportedCurrency.includes(upperTargetCurrency) === false )
 
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
+let convertedAmount;
+if (upperInitialCurrency === 'USD' ) {
+    if (upperTargetCurrency=== 'CAD'){
+        convertedAmount= amount/cadToUsd;}
+    else if (upperTargetCurrency=== 'GBP'){
+        convertedAmount= amount*usdToGbp;}    
+}
+
+else if (upperInitialCurrency === 'CAD' ) {
+    if ( upperTargetCurrency=== 'USD'){
+        convertedAmount= amount*cadToUsd;}
+    else if ( upperTargetCurrency=== 'GBP'){
+        convertedAmount= amount*cadToGbp;}
+}
+
+else if (upperInitialCurrency === 'GBP' ) {
+    if ( upperTargetCurrency=== 'USD'){
+        convertedAmount= amount/usdToGbp;}
+    else if ( upperTargetCurrency=== 'CAD'){
+        convertedAmount= amount/cadToGbp;}
+}
 
 
 // --------------------------------------------------
