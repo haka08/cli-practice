@@ -126,3 +126,6 @@ else if (upperInitialCurrency === 'GBP' ) {
 
 // This message should also include the original amount and currency information
 // supplied by the user.
+
+console.log(`The following amount: ${amount} ${upperInitialCurrency}`);
+console.log(`has been converted to: ${convertedAmount.toFixed(2)} ${upperTargetCurrency}`);
