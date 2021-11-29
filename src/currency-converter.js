@@ -27,6 +27,21 @@ const targetCurrency=process.argv[4];
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
+var regex=/^[a-zA-Z]/;
+if (amount ===undefined || amount <= 0 || isNaN(amount)){
+    console.log("Oh no! Looks like there is an error! Either you have not entered a number, it is less than 0. Try again!")
+    process.exit();
+}
+
+if (initialCurrency ===undefined || !(initialCurrency.match(regex)) ){
+    console.log("Oh no! Looks like you didn't enter an initial currency in the valid input format. Try again!")
+    process.exit();
+}
+
+if (targetCurrency ===undefined || !(targetCurrency.match(regex)) ){
+    console.log("Oh no! Looks like you didn't enter a target currency in the valid input format. Try again!")
+    process.exit();
+}
 
 
 // --------------------------------------------------
@@ -41,6 +56,11 @@ const targetCurrency=process.argv[4];
 // The conversion rates do not have to be accurate, athough this resource contains
 // up-to-date rate information: https://www.xe.com/
 
+let usd=1
+let gbp=1
+let cadToUsd=0.7
+let cadToGbp=0.5
+let usdToGbp=0.7
 
 
 // --------------------------------------------------
